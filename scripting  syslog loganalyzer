@@ -27,6 +27,7 @@ def script():
     send_1 = ssh.send_command_timing(am_iroot)
     if  not "root" in send_1:
         print("you are not root, leaving script. ")
+        ssh.disconnect()
     else:
         yes_no = input("Executing script, are you sure you want to run this script y/n ? ")
         if "n" in yes_no:
